@@ -1,0 +1,16 @@
+
+crud véhicules:
+
+/véhicules
+
+- insérer véhicule
+- lister 
+- supprimer
+
+/home
+
+formulaire
+- selectionner véhicule (liste déroulante)
+- input nombres kilometres
+- afficher resultats calculs
+
