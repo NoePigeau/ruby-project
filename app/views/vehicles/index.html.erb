@@ -1,0 +1,13 @@
+<section> 
+    <h1> Listes des véhicules </h1>
+    <div> 
+        <hr>
+        <% @vehicles.each do |vehicle| %>
+            <%= vehicle.name %>
+            <%= vehicle.consumption %>
+            <hr>       
+        <%end%>
+    </div>
+    
+    
+</section>
