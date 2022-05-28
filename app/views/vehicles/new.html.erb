@@ -1,0 +1,25 @@
+<section>
+    <h1> Ajouter un nouveau véhicule </h1>
+    <%= form_with  model: @vehicle, local: true do |form| %>
+    <div>
+        <span> <%= form.label "Nom" %> </span>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <span> <%= form.label "Consommation" %> </span>
+        <%= form.text_field :consumption %>
+    </div>
+    <%= form.submit "Valider" %>
+
+    <% if @vehicle.errors.any? %>
+        <div>
+            <h2> Erreur: </h2>
+            <ul>
+                <% @vehicle.errors.full_messages.each do |msg| %>
+                    <li> <%= msg %> </li>
+                <%end%>
+            </ul>
+        </div>
+    <%end%>
+    <%end%>
+</section>
