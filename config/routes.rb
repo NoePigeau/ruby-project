@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   get "home", to: "home#index"
 
+  get "get-consumption", to: "home#get_consumption"
+
   resources :vehicles, only: [:show, :index, :new, :create]
 end

@@ -2,7 +2,7 @@ class CreateVehicles < ActiveRecord::Migration[6.1]
   def change
     create_table :vehicles do |t|
       t.string :name
-      t.real :consumption
+      t.float :consumption
 
       t.timestamps
     end
