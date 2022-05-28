@@ -1,11 +1,16 @@
 <section> 
     <h1> Listes des véhicules </h1>
+
+    <%= link_to "Ajouter un véhicule", new_vehicle_path()%>
+    
     <div> 
         <hr>
         <% @vehicles.each do |vehicle| %>
-            <%= vehicle.name %>
-            <%= vehicle.consumption %>
-            <hr>       
+            <div>
+                <%= link_to vehicle.name, vehicle_path(vehicle)%>
+                <%= vehicle.consumption %>
+                <hr>  
+            </div>     
         <%end%>
     </div>
     

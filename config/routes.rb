@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get "home", to: "home#index"
 
-  resources :vehicles, only: [:show, :index]
+  resources :vehicles, only: [:show, :index, :new, :create]
 end
