@@ -1,5 +1,60 @@
-<%= @kilometers  %>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  nav {
+    padding: 1em 2em;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around;
+    background-color: #1c1f29;
+  }
+
+  nav a {
+    color: white;
+  text-decoration: none;
+  }
+
+  main, form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main h1 {
+    margin-bottom: 2em;
+  }
+
+  main form div, span {
+        margin-bottom: 1em;
+
+  }
+
+  main form input[type=submit] {
+        background-color: #1c1f29;
+        color: white;
+padding: .5em 1em;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+  }
+
+  </style>
+  <nav >
+    <a href="/">Accueil</a>
+    <a href="/vehicles">Vehicules</a>
+  </nav>
+    <main>
+    <span>Modele du vehicle: <b><%= @vehicle.name  %></b></span>
+    <span>Nombre de kilomètre à parcourir: <b><%= @kilometers  %></b></span>
 <br>
-<%= @vehicle.consumption %>
+<span>Consommation du véhicule: <b><%= @vehicle.consumption %></b></span>
 <br>
-<%= (@kilometers.to_i * @vehicle.consumption.to_f) %>
+<span>Consommation du véhicule pour le trajet prévu: <b><%= (@kilometers.to_i * @vehicle.consumption.to_f) %> Litres</b></span>
+    </main>

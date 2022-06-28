@@ -4,10 +4,61 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  nav {
+    padding: 1em 2em;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around;
+    background-color: #1c1f29;
+  }
 
+  nav a {
+    color: white;
+  text-decoration: none;
+  }
+
+  main, form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main h1 {
+    margin-bottom: 2em;
+  }
+
+  main form div {
+        margin-bottom: 1em;
+
+  }
+
+  main form input[type=submit] {
+        background-color: #1c1f29;
+        color: white;
+padding: .5em 1em;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+  }
+
+  </style>
   <body>
+  <nav >
+    <a href="/">Accueil</a>
+    <a href="/vehicles">Vehicules</a>
+  </nav>
+  <main>
     <h1> Ma consomation de carburant</h1>
-  <br><br>
 
   <%= form_tag(get_consumption_path, :method => "get") do %>
     <div>
@@ -18,7 +69,9 @@
       <%= label_tag(:kilometers, "Entrez le nombre de kilomètre parcouru:") %>
       <%= number_field_tag(:kilometers) %>
     </div>
-    <%= submit_tag("valider") %>
+    <%= submit_tag("Valider") %>
   <% end %>
+    </main>
+
   </body>
 </html>
