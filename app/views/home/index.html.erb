@@ -7,5 +7,18 @@
 
   <body>
     <h1> Ma consomation de carburant</h1>
+  <br><br>
+
+  <%= form_tag(get_consumption_path, :method => "get") do %>
+    <div>
+      <%= label_tag(:vehicle_id, "Séléctionnez votre moyen de locomation:") %>
+      <%= select("vehicle", "id", Vehicle.all.collect {|v| [ v.name, v.id ] }, { include_blank: false }) %>
+    </div>
+    <div>
+      <%= label_tag(:kilometers, "Entrez le nombre de kilomètre parcouru:") %>
+      <%= number_field_tag(:kilometers) %>
+    </div>
+    <%= submit_tag("valider") %>
+  <% end %>
   </body>
 </html>
